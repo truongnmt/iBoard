@@ -6,6 +6,6 @@ import {Plugins} from './Plugins/Plugins';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    template: 'app.html'
 })
 export class AppComponent { }
