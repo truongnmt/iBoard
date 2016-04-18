@@ -26,5 +26,8 @@ import {Component} from 'angular2/core';
 })
 
 export class MainContent{
-
+	constructor()
+	{
+		public turn ='X';
+	}
 }
