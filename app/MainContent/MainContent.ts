@@ -2,9 +2,9 @@ import {Component} from 'angular2/core';
 
 @Component({
 	selector:'content',
-	tempalteUrl: 'app/MainContent/content.html',
+	templateUrl: 'content.html',
 })
 
-export class MainContent(){
+export class MainContent{
 	
 }
