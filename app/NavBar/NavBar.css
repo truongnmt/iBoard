@@ -1,0 +1,13 @@
+ .NavBarCollapsed {
+    display: inline-block;
+    overflow: hidden;
+    width: 50;
+    height: 100%;
+    transition: width 1s;
+    -webkit-transition: width 1s;        
+    -moz-transition: width 1s;        
+    -o-transition: width 1s;         
+  }
+  .NavBarCollapsed.showMe {
+    width: 200px;
+  }
