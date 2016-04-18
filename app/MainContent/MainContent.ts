@@ -26,12 +26,13 @@ import {Component} from 'angular2/core';
 })
 
 export class MainContent{
-	private turn;
 
+	public message = '';
+	private turn = 'X';
 	constructor(){
 		this.turn = "X";
 	}
-	// public nextMove(){
-	// 	this.message1 = turn;
-	// }
+	public nextMove(){
+		this.message1 = turn;
+	}
 }
