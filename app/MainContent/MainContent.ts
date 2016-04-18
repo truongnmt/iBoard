@@ -5,6 +5,6 @@ import {Component} from 'angular2/core';
 	tempalteUrl: 'app/MainContent/content.html',
 })
 
-export class contentComponent(){
-
+export class MainContent(){
+	
 }
