@@ -26,8 +26,8 @@ import {Component} from 'angular2/core';
 })
 
 export class MainContent{
-	var message = '';
-	var turn = 'X';
+	private turn;
+
 	constructor(){
 		this.turn = "X";
 	}

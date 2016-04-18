@@ -11,3 +11,18 @@
   .NavBarCollapsed.showMe {
     width: 200px;
   }
+
+  .OptionButton{
+    background-image: url(app/assets/UIpng/Options.png);
+    margin-top:20px;
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    padding: 0px;
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+  }
