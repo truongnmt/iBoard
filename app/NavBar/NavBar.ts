@@ -7,7 +7,7 @@ import {Component} from 'angular2/core';
 })
 
 export class Navbar {
-	private open = 1;
+	private open = 0;
 	public NavBarTrigger(){
 
 	}
