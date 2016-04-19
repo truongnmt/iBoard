@@ -2,3 +2,23 @@ body{
 	padding: 0;
 	margin: 0;
 }
+
+.black{
+	color: #171718;
+}
+
+.blue{
+	color: #1B93C7;
+}
+
+.red{
+	color: #FC5760;
+}
+
+.green{
+	color: #86D854;
+}
+
+.purple{
+	color: #6b5194;
+}
