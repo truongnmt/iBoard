@@ -3,21 +3,22 @@
     overflow: hidden;
     width: 50;
     height: 100%;
-    transition: width 1s;
-    -webkit-transition: width 1s;        
-    -moz-transition: width 1s;        
-    -o-transition: width 1s;         
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;        
+    -moz-transition: width 0.5s;        
+    -o-transition: width 0.5s;         
   }
   .NavBarCollapsed.showMe {
-    width: 200px;
+    width: 250px;
   }
 
   .OptionButton{
     background-image: url(app/assets/UIpng/Options.png);
+    background-position: center top;
     margin-top:20px;
-    margin-right: 5px;
-    height: 30px;
-    width: 30px;
+
+    height: 100%;
+    width: 50px;
     padding: 0px;
     background-color: transparent;
     background-repeat:no-repeat;
