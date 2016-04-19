@@ -1,20 +1,20 @@
 <div id="message"> Message will go here</div>
-	<table border="1">
+<table border="1">
 	<tr>
-		<td id="s1" class="Square" onclick="nextMove(this);"></td>
-		<td id="s2" class="Square" onclick="nextMove(this);"></td>
-		<td id="s3" class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" (click)="nextMove(table[0]);">{{table[0].value}}</td>
+		<td class="Square" (click)="nextMove(table[1]);">{{table[1].value}}</td>
+		<td class="Square" (click)="nextMove(table[2]);">{{table[2].value}}</td>
 	</tr>
 	<tr>
-		<td id="s4" class="Square" onclick="nextMove(this);"></td>
-		<td id="s5" class="Square" onclick="nextMove(this);"></td>
-		<td id="s6" class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" (click)="nextMove(table[3]);">{{table[3].value}}</td>
+		<td class="Square" (click)="nextMove(table[4]);">{{table[4].value}}</td>
+		<td class="Square" (click)="nextMove(table[5]);">{{table[5].value}}</td>
 	</tr>
 	<tr>
-		<td id="s7" class="Square" onclick="nextMove(this);"></td>
-		<td id="s8" class="Square" onclick="nextMove(this);"></td>
-		<td id="s9" class="Square" onclick="nextMove(this);"></td>
+		<td class="Square" (click)="nextMove(table[6]);">{{table[6].value}}</td>
+		<td class="Square" (click)="nextMove(table[7]);">{{table[7].value}}</td>
+		<td class="Square" (click)="nextMove(table[8]);">{{table[8].value}}</td>
 	</tr>
 </table>
-<button onclick="startGame();">RESTART</button>
+<button (click)="startGame();">RESTART</button>
 
