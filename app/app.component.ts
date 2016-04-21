@@ -8,7 +8,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.html',
-    directives: [Header, Navbar, MainContent],
+    directives: [Header, Navbar, MainContent,Plugins],
     
 })
 

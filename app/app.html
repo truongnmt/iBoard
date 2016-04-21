@@ -3,7 +3,9 @@ float:left;
 position:absolute;
 overflow: hidden;
 height:100%;
-display:inline-block;" ><navbar></navbar>
+display:inline-block;
+z-index: 10" >
+<navbar></navbar>
 </div>
 
 <div style="
@@ -13,7 +15,42 @@ float:left;
 overflow: hidden;
 width: calc(100% - 50px);
 " >
+
+<div id="header" 
+style="
+background-color:#1B93C7;
+height: 10%;
+min-height: 50px;
+border: 6px solid #171718;
+" >
 <header></header>
+</div>
+
+<div
+style="background-color:#E6E6E6;
+position:relative;
+border: 6px solid #171718;
+height: calc(90% - 22px);
+">
+
+<div id="content"
+style="
+display: inline-block;
+width: calc(50% - 6px);
+min-width: 400px;
+"
+>
 
 <content></content>
+</div>
+
+<div id="plugin"
+style="display: inline-block;
+width: calc(50% - 6px);
+min-width: 400px;
+height: calc(100% - 12px);
+">
+<plugin></plugin>
+</div>
+
 </div>
