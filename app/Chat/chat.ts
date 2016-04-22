@@ -9,9 +9,8 @@ import {Component} from 'angular2/core';
 //declare var io;
 
 export class Chat {
-	public socket 
 	constructor(){
-		this.socket = io();
+		//ask user for 
 
 	}
 }
