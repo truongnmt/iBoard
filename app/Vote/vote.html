@@ -1,9 +1,20 @@
 <html>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 	<script>
+
+	
+	function init(){
+		if(window.innerWidth <= 800){
+			document.getElementById("chartContainer").style.height="400px";
+
+		}
+		else document.getElementById("chartContainer").style.height="500px";
+
+	}
 	var choice = -1;
 
 	var chart;
@@ -65,6 +76,8 @@
 	
 	
 	window.onload = function () {
+		
+	init();
 		//getInitialData from Server
 		// initial values of dataPoints
 		chart = new CanvasJS.Chart("chartContainer",{
@@ -72,13 +85,14 @@
 			title:{ 
 				text: "What prize do you think your team will get?"
 			},
+			backgroundColor:"#E6E6E6",
 			axisY: {				
 				title: "Number of People"
 			},					
 			legend:{
 				verticalAlign: "top",
 				horizontalAlign: "centre",
-				fontSize: 16
+				fontSize: 17
 			},
 			data : [{
 				type: "column",
@@ -98,8 +112,11 @@
 			// Selecting a random dataPoint
 
 			// updating legend text. 
-			
-			totalEmployees = "Total number of people voted: " ;			
+			var sum = 0;
+			for (var i = 0; i < 5; i++) {
+				sum+=voteStats[i].y;
+			}
+			totalEmployees = "Total number of people voted: " +sum;			
 			chart.options.data[0].legendText = totalEmployees;	
 
 			chart.render();
@@ -112,22 +129,48 @@
 
 		
 	</head>
-<body>
-	<div id="chartContainer" style="height:300px; width:100%;">
+<body style="background-color: transparent;">
+	<div id="chartContainer" style="height:400px; width:100%; background-color: #E6E6E6;">
 	</div>
-	
+	<br><br><br>
+
+	<div style="text-align: center;">
 		<div id="p0" onclick="choose(0)" style="
 		background-image: url(../assets/UIpng/Shape1.png);
-		width:10%; height:40px; display:inline-block;
-     background-size: cover; ">
-			<p style="margin: 30px auto; position:relative;">1</p>
+		width:50px; height:50px; display:inline-block;
+		text-align: center;
+     	background-size: cover; ">
+			<p style=" position:relative; font-size: 24px; color:white">1</p>
 		</div> 
-		<div id="p1" onclick="choose(1)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;
-		"></div> 
-		<div id="p2" onclick="choose(2)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;"></div> 
-		<div id="p3" onclick="choose(3)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;"></div> 
-		<div id="p4" onclick="choose(4)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;"></div> 
-	
+		<div id="p1" onclick="choose(1)" style="
+		background-image: url(../assets/UIpng/Shape1.png);
+		width:50px; height:50px; display:inline-block;
+		text-align: center;
+     	background-size: cover; ">
+			<p style=" position:relative; font-size: 24px; color:white">2</p>
+		</div> 
+		<div id="p2" onclick="choose(2)" style="
+		background-image: url(../assets/UIpng/Shape1.png);
+		width:50px; height:50px; display:inline-block;
+		text-align: center;
+     	background-size: cover; ">
+			<p style=" position:relative; font-size: 24px; color:white">3</p>
+		</div> 
+		<div id="p3" onclick="choose(3)" style="
+		background-image: url(../assets/UIpng/Shape1.png);
+		width:50px; height:50px; display:inline-block;
+		text-align: center;
+     	background-size: cover; ">
+			<p style=" position:relative; font-size: 24px; color:white">4</p>
+		</div> 
+		<div id="p4" onclick="choose(4)" style="
+		background-image: url(../assets/UIpng/Shape1.png);
+		width:50px; height:50px; display:inline-block;
+		text-align: center;
+     	background-size: cover; ">
+			<p style=" position:relative; font-size: 24px; color:white">5</p>
+		</div> 
+	<div>
 </body>
 
 </html>
