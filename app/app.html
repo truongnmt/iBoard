@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <div style="
 float:left;
 position:absolute;
@@ -44,13 +45,18 @@ min-width: 400px;
 <content></content>
 </div>
 
+</div>
+<a href ="./app/Chat/chat.html" style="text-decoration: none; text-align: center;" target="Myplugin"><p style="color:black; font-size: 20px; margin-top: -1px">CHAT</p></a>
+	<iframe width="100%" height="300px" name="Myplugin" src="app/Chat/chat.html"> </iframe>
 <div id="plugin"
 style="display: inline-block;
 width: calc(50% - 6px);
 min-width: 400px;
 height: calc(100% - 12px);
 ">
-<plugin></plugin>
+
+	<iframe id="plugin" src="app/Chat/chat.html"> </iframe>
+
 </div>
 
 </div>
