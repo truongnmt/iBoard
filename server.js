@@ -1,4 +1,3 @@
-
 var express = require('express');
 var app =  express();
 var http = require('http').Server(app);
@@ -14,18 +13,29 @@ var path = require('path');
 
 app.use(express.static('./'));
 
+var userSockets = [""];
+
 // Register events on socket connection
 io.on('connection', function(socket){
- socket.on('chatMessage', function(from, msg){
-   io.emit('chatMessage', from, msg);
- });
- socket.on('notifyUser', function(user){
-   io.emit('notifyUser', user);
- });
+userSockets.push(socket);
+//console.log(socket);
+socket.on('chatMessage', function(from, msg){
+  io.emit('chatMessage', from, msg);
+});
+socket.on('notifyUser', function(user){
+    console.log(user)
+  io.emit('notifyUser', user);
+});
+
+socket.on('caroPlay', function(posX,posY){
+    console.log('caroPlay: ',posX,' ',posY);
+    io.emit('caroPlay',posX,posY);
+})
+
 });
 
 // Listen application request on port 3000
 var port = 8124;
 http.listen(port, function(){
- console.log('listening on *: ', port);
+console.log('listening on *: ', port);
 });
