@@ -14,14 +14,25 @@ var path = require('path');
 
 app.use(express.static('./'));
 
+var userSockets = [""];
+
 // Register events on socket connection
 io.on('connection', function(socket){
+ userSockets.push(socket);
+ //console.log(socket);
  socket.on('chatMessage', function(from, msg){
    io.emit('chatMessage', from, msg);
  });
  socket.on('notifyUser', function(user){
+ 	console.log(user)
    io.emit('notifyUser', user);
  });
+
+ socket.on('caroPlay', function(posX,posY){
+ 	console.log('caroPlay: ',posX,' ',posY);
+	io.emit('caroPlay',posX,posY);
+ })
+
 });
 
 // Listen application request on port 3000
