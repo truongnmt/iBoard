@@ -22,10 +22,10 @@
     "a2-in-memory-web-api": "^0.1.15",
     "angular2": "2.0.0-beta.15",
     "es6-shim": "^0.35.0",
+    "express": "^4.13.4",
     "express.js": "^1.0.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
-
     "socket.io": "^1.4.5",
     "systemjs": "0.19.26",
     "zone.js": "0.6.10"
