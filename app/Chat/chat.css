@@ -12,7 +12,7 @@ form {
 form input { 
 	border: 0; 
 	padding: 10px; 
-	width: 90%; 
+	width: 85%; 
 	margin-right: .5%; 
 }
 form #button { 
@@ -20,12 +20,12 @@ form #button {
 	background: #2D9F0B; 
 	border: none; 
 	padding: 10px;  
-	width: 9%; 
+	width: 12%; 
 }
 #messages { 
 	list-style-type: none;
-	margin: 0; 
-	padding: 0; 
+	margin: 0 0 42px 0; 
+	padding: 0;
 }
 #messages li { 
 	padding: 5px 10px; 
@@ -35,7 +35,9 @@ form #button {
 }
 #notifyUser { 
 	position: fixed;
-	bottom: 42px; width: 100%;
+	text-align: right;
+	bottom: 42px;
+	width: 100%;
 }
 
 #wrapper{
@@ -58,8 +60,8 @@ form #button {
 	position:relative;
 	margin:50px auto;
 	background:#fff;
-	width:400px;
-	height:300px;
+	width:200px;
+	height:100px;
 	padding:23px;
 	border:1px solid #444;
 	border-radius:20px;

@@ -44,10 +44,6 @@
 			console.log(data);
 		});
 
-		// socket.on('ready'), function(data){
-		// 	console.log(data);
-		// }
-
 		function initChat(){
 			var name = document.getElementById('getNameText').value;
 			//name = makeid();
@@ -70,55 +66,25 @@
 				$('#lightbox').hide();
 				$("#wrapper").css({'text-shadow': '0px 0px 0px #000'});
 			});
-
-			
-			
-
-			// var name = makeid();
-			// $('#user').val(name);
-			// socket.emit('chatMessage', 'System', '<b>' + name + '</b> has joined the discussion');
-			// socket.on('connect', function() {
-  	// 			console.log('check 2', socket.connected);
-			// });
 		});
+	</script>
 
-		function makeid() {
-			var text = "";
-  //var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	<div id="lightbox">
+		<div id="lightbox_area">
+			<input type="text" id="getNameText" placeholder="Your name..."/>
+			<input type="submit" class="close" onclick="initChat();"/>
+		</div>		
+	</div>
 
-  //for( var i=0; i < 5; i++ ) {
-  //  text += possible.charAt(Math.floor(Math.random() * possible.length));
-  //}
-  while(text == '')
-  {
-  	text = prompt("Your usename: ");
-  }
-  return text;
-}
-
-</script>
-
-<div id="lightbox">
-	<div id="lightbox_area">
-		<input type="text" id="getNameText" placeholder="Your name..."></input>
-		<input type="submit" class="close" onclick="initChat();"></input>
-	</div>		
-</div>
-
-<div id="wrapper">
-	<p id="buildListUser"></p>
-	<ul id="messages"></ul>
-	<span id="notifyUser"></span>
-	<form id="form" action="" onsubmit="return submitfunction();" >
-	<input type="hidden" id="user" value="" /><input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="Type your message here.." /><input type="submit" id="button" value="Send"/>
-	</form>
-</div>
-
-<ul id="messages"></ul>
-<span id="notifyUser"></span>
-<form id="form" action="" onsubmit="return submitfunction();" >
-	<!-- <input id= userName onClick="start()"> -->
-	<input type="hidden" id="user" value="" /><input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="Type yor message here.." /><input type="submit" id="button" value="Send"/>
-</form>
+	<div id="wrapper">
+		<ul id="messages"></ul>
+		<span id="notifyUser"></span>
+		<form id="form" action="" onsubmit="return submitfunction();" >
+			<!-- <input id= userName onClick="start()"> -->
+			<input type="hidden" id="user" value="" />
+			<input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="Type yor message here.." />
+			<input type="submit" id="button" value="Send"/>
+		</form>
+	</div>
 </body>
 </html>
