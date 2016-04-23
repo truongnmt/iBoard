@@ -25,6 +25,7 @@ io.on('connection', function(socket){
 });
 
 // Listen application request on port 3000
-http.listen(8124, function(){
- console.log('listening on *:3000');
+var port = 8124;
+http.listen(port, function(){
+ console.log('listening on *: ', port);
 });
