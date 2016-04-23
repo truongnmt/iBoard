@@ -27,36 +27,21 @@ border: 6px solid #171718;
 <header></header>
 </div>
 
-<div
+<div id="content"
 style="background-color:#E6E6E6;
 position:relative;
 border: 6px solid #171718;
 height: calc(90% - 22px);
 ">
 
-<div id="content"
-style="
-display: inline-block;
-width: calc(50% - 6px);
-min-width: 400px;
-"
->
+<iframe style="overflow:hidden;
+display:inline-block;
+width: 400px;
+height: 300px;
+border: none;
+" id="Myplugin" name="Myplugin" src="app/Caro/Caro.html"> </iframe>
 
-<content></content>
-</div>
+<iframe id="plugin" src="app/Chat/chat.html"> </iframe>
 
-</div>
-<a href ="./app/Chat/chat.html" style="text-decoration: none; text-align: center;" target="Myplugin"><p style="color:black; font-size: 20px; margin-top: -1px">CHAT</p></a>
-	<iframe width="100%" height="300px" name="Myplugin" src="app/Chat/chat.html"> </iframe>
-<div id="plugin"
-style="display: inline-block;
-width: calc(50% - 6px);
-min-width: 400px;
-height: calc(100% - 12px);
-">
-
-	<iframe id="plugin" src="app/Chat/chat.html"> </iframe>
-
-</div>
 
 </div>

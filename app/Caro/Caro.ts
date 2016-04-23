@@ -6,12 +6,12 @@ export class square {
 }
 
 @Component({
-	selector: 'content',
-	templateUrl: 'app/MainContent/content.html',
-	styleUrls: ['app/MainContent/content-style.css']
+	selector: 'caro',
+	templateUrl: 'app/Caro/caro.html',
+	styleUrls: ['app/Caro/caro.css']
 })
 
-export class MainContent {
+export class Caro {
 	turn: string;
 	winner: string;
 	table = TABLE;
