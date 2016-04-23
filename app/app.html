@@ -1,4 +1,8 @@
 <router-outlet></router-outlet>
+
+
+
+
 <div style="
 float:left;
 position:absolute;
@@ -34,14 +38,27 @@ border: 6px solid #171718;
 height: calc(90% - 22px);
 ">
 
-<iframe style="overflow:hidden;
-display:inline-block;
-width: 400px;
-height: 300px;
+<iframe id="gameFrame"
+style="overflow:hidden;
+display:block;
+margin-left: auto;
+margin-right: auto;
+width: 460px;
+height: 460px;
 border: none;
-" id="content1" name="content1" src="app/Caro/caro.html"> </iframe>
+" scrolling="no" src="app/Caro/codelab.html"> </iframe>
 
-<iframe id="content2" name="content2" src="app/Chat/chat.html"> </iframe>
+<!-- <caro></caro> -->
+
+<iframe id="chatFrame"
+style="overflow:hidden;
+display:block;
+margin-left: auto;
+margin-right: auto;
+width: 460px;
+height: 200px;
+border: none;" src="app/Chat/chat.html"> </iframe>
+
 
 
 </div>
