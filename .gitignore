@@ -14,3 +14,4 @@ _temp
 !protractor*.js
 !wallaby.js
 npm-debug.log
+!server.js
