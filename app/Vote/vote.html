@@ -1,0 +1,133 @@
+<html>
+
+<head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+	<script>
+	var choice = -1;
+
+	var chart;
+	var choose = function (myChoice){
+		if(choice==-1){
+			choice = myChoice;
+			var id = "p" + choice;
+			document.getElementById(id).style.backgroundImage = "url(../assets/UIpng/selected.png)";
+			socket.emit("p",choice);
+			voteStats[choice].y++;
+		}
+		else{
+			socket.emit("m",choice);
+			var id = "p" + choice;
+			document.getElementById(id).style.backgroundImage = "url(../assets/UIpng/Shape1.png)";
+			voteStats[choice].y--;
+			choice = myChoice;
+			voteStats[choice].y++;
+			socket.emit("p",choice);
+			id = "p" + choice;
+			document.getElementById(id).style.backgroundImage = "url(../assets/UIpng/selected.png)";
+
+		}
+		chart.render();
+	}
+
+
+
+	var socket = io();
+	var voteStats = [
+		{label: "1st Prize", y: 0},
+		{label: "2nd Prize", y: 0},
+		{label: "3rd Prize", y: 0},
+		{label: "4th Prize", y: 0},
+		{label: "No prize", y: 0}
+		];
+		console.log('voteStatsMeoMeo:',JSON.stringify(voteStats));
+	var totalEmployees = "Total number of people voted: 0";
+
+	socket.on("p",function(x){
+		voteStats[x].y++;
+		console.log(JSON.stringify(voteStats));
+	})
+
+	socket.on("m",function(x){
+		voteStats[x].y--;
+	})
+
+	socket.on("returnData", function(data){
+		voteStats[0].y = data[0];
+		voteStats[1].y = data[1];
+		voteStats[2].y = data[2];
+		voteStats[3].y = data[3];
+		voteStats[4].y = data[4];
+		console.log('voteStats:',JSON.stringify(voteStats));
+	});
+
+	socket.emit("getData");
+	
+	
+	window.onload = function () {
+		//getInitialData from Server
+		// initial values of dataPoints
+		chart = new CanvasJS.Chart("chartContainer",{
+			theme: "theme2",
+			title:{ 
+				text: "What prize do you think your team will get?"
+			},
+			axisY: {				
+				title: "Number of People"
+			},					
+			legend:{
+				verticalAlign: "top",
+				horizontalAlign: "centre",
+				fontSize: 16
+			},
+			data : [{
+				type: "column",
+				showInLegend: true,
+				legendMarkerType: "none",				
+				legendText: totalEmployees,
+				indexLabel: "{y}",
+				dataPoints: voteStats
+			}]
+	});
+		// renders initial chart
+		chart.render();
+
+
+		var updateInterval = 1000;  // milliseconds
+		var updateChart = function () {
+			// Selecting a random dataPoint
+
+			// updating legend text. 
+			
+			totalEmployees = "Total number of people voted: " ;			
+			chart.options.data[0].legendText = totalEmployees;	
+
+			chart.render();
+
+		};
+			// update chart after specified interval
+			setInterval(function(){updateChart()}, updateInterval);
+		}	
+		</script>
+
+		
+	</head>
+<body>
+	<div id="chartContainer" style="height:300px; width:100%;">
+	</div>
+	
+		<div id="p0" onclick="choose(0)" style="
+		background-image: url(../assets/UIpng/Shape1.png);
+		width:10%; height:40px; display:inline-block;
+     background-size: cover; ">
+			<p style="margin: 30px auto; position:relative;">1</p>
+		</div> 
+		<div id="p1" onclick="choose(1)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;
+		"></div> 
+		<div id="p2" onclick="choose(2)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;"></div> 
+		<div id="p3" onclick="choose(3)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;"></div> 
+		<div id="p4" onclick="choose(4)" style="background-image: url(../assets/UIpng/Shape1.png); width:40px; height:40px; display:inline-block;"></div> 
+	
+</body>
+
+</html>
