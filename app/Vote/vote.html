@@ -9,8 +9,13 @@
 	
 	function init(){
 		if(window.innerWidth <= 800){
-			document.getElementById("chartContainer").style.height="400px";
-
+			if(window.innerWidth<530){
+				document.getElementById("chartContainer").style.height="300px";
+			}
+			else{
+				document.getElementById("chartContainer").style.height="400px";
+			}
+			
 		}
 		else document.getElementById("chartContainer").style.height="500px";
 
@@ -141,7 +146,7 @@
 <body style="background-color: transparent;">
 	<div id="chartContainer" style="height:400px; width:100%; background-color: #E6E6E6;">
 	</div>
-	<br><br><br>
+	<br><br>
 
 	<div style="text-align: center;">
 		<div id="p0" onclick="choose(0)" style="
