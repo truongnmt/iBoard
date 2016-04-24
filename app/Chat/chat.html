@@ -30,6 +30,7 @@
 			var color = (from == me) ? 'green' : '#009afd';
 			var from = (from == me) ? 'Me' : from;
 			$('#messages').append('<li><b style="color:' + color + '">' + from + '</b>: ' + msg + '</li>');
+			$(document).scrollTop($(document).height());
 		});
 
 		socket.on('notifyUser', function(user){
@@ -46,6 +47,7 @@
 
 		function initChat(){
 			var name = document.getElementById('getNameText').value;
+			if(name == "") name = "Anonymous";
 			//name = makeid();
 			$('#user').val(name);
 			socket.emit('chatMessage', 'System', '<b>' + name + '</b> has joined the discussion');
@@ -60,7 +62,7 @@
 		$(document).ready(function(){
 			$('#lightbox').fadeTo(1000, 1);
 			$("#wrapper").css({'text-shadow': '0px 0px 10px #000'});
-			
+			$(document).scrollTop($(document).height());			
 
 			$('.close').click(function(){
 				$('#lightbox').hide();
@@ -72,7 +74,7 @@
 	<div id="lightbox">
 		<div id="lightbox_area">
 			<input type="text" id="getNameText" placeholder="Your name..."/>
-			<input type="submit" class="close" onclick="initChat();"/>
+			<button class="close" onclick="initChat();">OK</button>
 		</div>		
 	</div>
 
