@@ -25,12 +25,12 @@ io.on('connection', function(socket) {
 		io.emit('chatMessage', from, msg);
 	});
 	socket.on('notifyUser', function(user) {
-		console.log(user)
+		//console.log(user)
 		io.emit('notifyUser', user);
 	});
 
 	socket.on('caroPlay', function(posX, posY) {
-		console.log('caroPlay: ', posX, ' ', posY);
+		//console.log('caroPlay: ', posX, ' ', posY);
 		socket.broadcast.emit('caroPlay', posX, posY);
 	})
 
@@ -41,7 +41,7 @@ io.on('connection', function(socket) {
 	socket.on('p', function(x) {
 		socket.broadcast.emit('p', x);
 		voteStats[x]++;
-		console.log(voteStats);
+		//console.log(voteStats);
 	});
 
 	socket.on('m', function(x) {
