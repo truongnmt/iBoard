@@ -1,8 +1,8 @@
 # iBoard
 
-This project is an web app built in 24h in a Hackathon Contest (AngelHack Hanoi Apr 2016). 
+This project is an web app built in 24h in a Hackathon Contest (AngelHack Hanoi Apr 2016). Built by using AngularJS, SocketIO, Bootstrap.
 
-About this web app, really nothing much :v . We (team of 2 people) just resemble things together: survey, chat, game.
+About this web app, really nothing much :v . We (team of 2 people) just resemble things together: a survey tool, a chat app and a game.
 
 ## Install npm packages
 
