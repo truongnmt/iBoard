@@ -2,6 +2,8 @@
 
 This project is an web app built in 24h in a Hackathon Contest (AngelHack Hanoi Apr 2016). Built by using AngularJS, SocketIO, Bootstrap.
 
+Demo: http://52.221.242.111:3000/
+
 About this web app, really nothing much :v . We (team of 2 people) just resemble things together: a survey tool, a chat app and a game.
 
 ## Install npm packages
